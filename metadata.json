@@ -1,0 +1,8 @@
+{
+  "name": "Vui Học – Gọi Tên Học Sinh",
+  "description": "Ứng dụng gọi tên học sinh ngẫu nhiên, vui nhộn và công bằng dành cho giáo viên tiểu học với nhiều trò chơi sinh động.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

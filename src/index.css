@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Baloo 2', cursive, sans-serif;
+    --font-sans: 'Nunito', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Theme color definitions */
+.theme-rainbow {
+  --bg-gradient: linear-gradient(135deg, #fef3c7 0%, #ede9fe 50%, #dbeafe 100%);
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --accent: #8b5cf6;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --text-main: #1e293b;
+}
+
+.theme-space {
+  --bg-gradient: linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #0f172a 100%);
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent: #ec4899;
+  --card-bg: rgba(30, 27, 75, 0.88);
+  --header-bg: rgba(15, 23, 42, 0.85);
+  --text-main: #f8fafc;
+}
+
+.theme-nature {
+  --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #fefce8 100%);
+  --primary: #10b981;
+  --primary-hover: #059669;
+  --accent: #eab308;
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --text-main: #064e3b;
+}
+
+.theme-ocean {
+  --bg-gradient: linear-gradient(135deg, #ecfeff 0%, #e0f2fe 50%, #e0e7ff 100%);
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --accent: #06b6d4;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --text-main: #0c4a6e;
+}
+
+.theme-dino {
+  --bg-gradient: linear-gradient(135deg, #fef9c3 0%, #ffedd5 50%, #fef2f2 100%);
+  --primary: #ea580c;
+  --primary-hover: #c2410c;
+  --accent: #84cc16;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --text-main: #431407;
+}
+
+.theme-robot {
+  --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #f8fafc 100%);
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #06b6d4;
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --text-main: #0f172a;
+}
+
+/* Custom bounce and floating animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.5); }
+  50% { box-shadow: 0 0 35px rgba(245, 158, 11, 0.85); }
+}
+
+@keyframes shakeSuspense {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-6deg) scale(1.04); }
+  40% { transform: rotate(6deg) scale(1.04); }
+  60% { transform: rotate(-5deg) scale(1.05); }
+  80% { transform: rotate(5deg) scale(1.05); }
+}
+
+@keyframes sparkleSpin {
+  0% { transform: rotate(0deg) scale(0.9); opacity: 0.7; }
+  50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+  100% { transform: rotate(360deg) scale(0.9); opacity: 0.7; }
+}
+
+.animate-float {
+  animation: floatSlow 3.5s ease-in-out infinite;
+}
+
+.animate-shake-suspense {
+  animation: shakeSuspense 0.35s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 1.8s infinite;
+}
+
+.animate-sparkle {
+  animation: sparkleSpin 3s linear infinite;
+}
+
+@keyframes cameraShake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-4px, 3px) rotate(-1deg); }
+  30% { transform: translate(5px, -4px) rotate(1.5deg); }
+  45% { transform: translate(-3px, -2px) rotate(-1deg); }
+  60% { transform: translate(4px, 3px) rotate(1deg); }
+  75% { transform: translate(-2px, 4px) rotate(-0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes dramaticHeartbeat {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.4)); }
+  15% { transform: scale(1.35); filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.9)); }
+  30% { transform: scale(1.1); }
+  45% { transform: scale(1.4); filter: drop-shadow(0 0 30px rgba(239, 68, 68, 1)); }
+}
+
+@keyframes spotlightSweep {
+  0% { transform: rotate(-35deg) scaleX(1); opacity: 0.25; }
+  50% { transform: rotate(35deg) scaleX(1.3); opacity: 0.65; }
+  100% { transform: rotate(-35deg) scaleX(1); opacity: 0.25; }
+}
+
+@keyframes laserSweep {
+  0% { top: 0%; opacity: 0.3; }
+  50% { top: 100%; opacity: 0.9; }
+  100% { top: 0%; opacity: 0.3; }
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-camera-shake {
+  animation: cameraShake 0.45s ease-in-out;
+}
+
+.animate-heartbeat-fast {
+  animation: dramaticHeartbeat 0.6s ease-in-out infinite;
+}
+
+.animate-spotlight {
+  animation: spotlightSweep 4s ease-in-out infinite;
+}
+
+.animate-laser {
+  animation: laserSweep 1.8s ease-in-out infinite;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #f59e0b, #fef08a, #d97706, #fef08a, #f59e0b);
+  background-size: 250% 250%;
+  animation: goldShimmer 2.5s ease infinite;
+}
+
